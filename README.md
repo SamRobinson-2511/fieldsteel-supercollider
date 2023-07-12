@@ -23,3 +23,8 @@ https://www.youtube.com/watch?v=LKGGWsXyiyo&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iE
 
 Envelopes and doneAction
 https://www.youtube.com/watch?v=-wDAPo9hpCg&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=5
+
+## Tutorial 5
+
+Multichannel Expansion
+https://www.youtube.com/watch?v=fAXETAyrv8s&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=6
