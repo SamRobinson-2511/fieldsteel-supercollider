@@ -19,3 +19,7 @@ https://www.youtube.com/watch?v=oTBcGPXH6K0&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iE
 Synth and SynthDef
 https://www.youtube.com/watch?v=LKGGWsXyiyo&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=4
 
+## Tutorial 4
+
+Envelopes and doneAction
+https://www.youtube.com/watch?v=-wDAPo9hpCg&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=5
