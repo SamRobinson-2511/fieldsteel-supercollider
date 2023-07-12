@@ -28,3 +28,8 @@ https://www.youtube.com/watch?v=-wDAPo9hpCg&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iE
 
 Multichannel Expansion
 https://www.youtube.com/watch?v=fAXETAyrv8s&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=6
+
+## Tutorial 6
+
+Iteration
+https://www.youtube.com/watch?v=bMGXYEg1gJo&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=7
