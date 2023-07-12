@@ -1,4 +1,4 @@
-# Fieldsteel Tutorials
+u# Fieldsteel Tutorials
 
 This repository houses the code for Eli Fieldsteel's excellent tutorial series on SuperCollider.
 
@@ -38,3 +38,8 @@ https://www.youtube.com/watch?v=bMGXYEg1gJo&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iE
 
 Server Architecture
 https://www.youtube.com/watch?v=VGs_lMw2hQg&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=8
+
+## Tutorial 8
+
+Buffers
+https://www.youtube.com/watch?v=_GZmuvmgtUc&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=9
