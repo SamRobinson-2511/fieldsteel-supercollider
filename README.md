@@ -1,5 +1,11 @@
 u# Fieldsteel Tutorials
 
+
+
+
+
+
+
 This repository houses the code for Eli Fieldsteel's excellent tutorial series on SuperCollider.
 
 ## Tutorial 0
@@ -43,3 +49,8 @@ https://www.youtube.com/watch?v=VGs_lMw2hQg&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iE
 
 Buffers
 https://www.youtube.com/watch?v=_GZmuvmgtUc&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=9
+
+## Tutorial 9
+
+MIDI, Part 1
+https://www.youtube.com/watch?v=Oz4KYZ9KLc0&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=10
