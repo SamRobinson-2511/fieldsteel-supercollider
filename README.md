@@ -33,3 +33,8 @@ https://www.youtube.com/watch?v=fAXETAyrv8s&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iE
 
 Iteration
 https://www.youtube.com/watch?v=bMGXYEg1gJo&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=7
+
+## Tutorial 7
+
+Server Architecture
+https://www.youtube.com/watch?v=VGs_lMw2hQg&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=8
