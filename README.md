@@ -15,3 +15,7 @@ https://www.youtube.com/watch?v=ntL8QDOhhL8&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iE
 https://www.youtube.com/watch?v=oTBcGPXH6K0&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=3
 
 ## Tutorial 3
+
+Synth and SynthDef
+https://www.youtube.com/watch?v=LKGGWsXyiyo&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=4
+

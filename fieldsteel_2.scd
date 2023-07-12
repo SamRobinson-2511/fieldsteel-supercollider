@@ -63,3 +63,18 @@ e = {
 }.play;
 )
 e.free;
+
+//control amp with LFNoise1
+(
+e = {
+	|noiseHz = 8|
+	var freq, amp, sig;
+	freq = LFNoise0.kr(noiseHz).exprange(100, 1000);
+	amp = LFNoise1.kr(12).exprange(0.02, 1);
+	sig = SinOsc.ar(freq) * amp;
+}.play;
+)
+e.set(\noiseHz, 20);
+e.set(\noiseHz, exprand(4,64));
+e.free;
+
