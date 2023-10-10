@@ -29,13 +29,33 @@ p = Pbind(
 p = Pbind(
 	\instrument, \sine,
 	\dur, Pwhite(0.05, 0.5, inf),
-	\freq, Pexprand(50, 4000, inf).trace,
+/*	\freq, Pexprand(50, 4000, inf).round(55.5).trace,*/
+	\midinote, 33,
+	\harmonic, Pexprand(1, 80, inf).round.trace,
 	\atk, Pwhite(2.0, 3.0, inf),
 	\rel, Pwhite(5.0, 10.0, inf),
-	\amp, Pexprand(0.01, 0.2, inf),
+	\amp, Pkey(\harmonic).reciprocal * 0.3,
 	\pan, Pwhite(-0.8, 0.8, inf);
 ).play;
 )
 s.plotTree;
 p.stop;
+
+//Pdef can change while playing
+
+(
+Pdef(
+	\sinepat,
+	Pbind(
+		\instrument, \sine,
+		\dur, Pwhite(0.05, 0.5, inf),
+		\midinote, Pseq([33], inf).trace,
+		\harmonic, Pexprand(1, 80, inf).round.trace,
+		\atk, Pwhite(2.0, 3.0, inf),
+		\rel, Pwhite(5.0, 10.0, inf),
+		\amp, Pkey(\harmonic).reciprocal * 0.3,
+		\pan, Pwhite(-0.8, 0.8, inf);
+	);
+).play;
+)
 
