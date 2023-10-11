@@ -209,7 +209,20 @@ Pdef(
 )
 
 (
-s.prepareForRecord;
+Pdef(
+	\sinepat,
+	Pbind(
+		\instrument, \sine,
+		\dur, Pseq([1/16], inf),
+		\stretch, 1.875,
+		\note, Pxrand([0, 3, 5, 9, 12], inf),
+		\gtranspose, -7,
+		\atk, 0.005,
+		\rel, Pexprand(0.01, 0.5, inf),
+		\amp, Pexprand(0.05, 0.5, inf),
+		\pan, Pwhite(-0.8, 0.8, inf);
+	);
+).play.quant_(1.875);
 
 Pdef(
 	\rhythm,
@@ -220,7 +233,7 @@ Pdef(
 		\buf, Pseq(
 			[
 				Prand(d[\kick], 1),
-				Prand(d[\chh]++d[\ohh], 6),
+				Prand(d[\chh]++d[\ohh], 7),
 				Prand(d[\ohh], 1),
 				Prand(d[\chh]++d[\ohh]++d[\kick], 7),
 			], inf
@@ -228,9 +241,11 @@ Pdef(
 		\rate, Pexprand(0.125, 420.0, inf),
 		\amp, Pseq([0.8, Pexprand(0.005, 0.2, 7)], inf)
 	);
-).play; //quantize per bar
+).play.quant_(1.875); //quantize per bar
 )
 
+Pdef(\rhythm).stop;
+Pdef(\sinepat).stop;
 
 
 
