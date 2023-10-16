@@ -90,7 +90,7 @@ SynthDef.new(\playbufTest, {
 }).add;
 )
 
-Synth.new(\playbufTest, [\buf, ~b2.bufnum, \rate, 0.75]);
+Synth.new(\playbufTest, [\buf, ~b2.bufnum, \rate, 0.25]);
 
 
 //can't change number of channels dynamically
