@@ -21,5 +21,10 @@ MIDIdef.noteOn(\noteOnTest, {
 MIDIdef.noteOn(\noteOnTest, {
 	|vel, nn|
 	[vel, nn].postln;
+	{
+		var sig, env;
+		sig = SinOsc.ar(nn.midicps
+	}
 })
 )
+
