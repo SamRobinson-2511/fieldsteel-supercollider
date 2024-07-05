@@ -125,14 +125,6 @@ SynthDef(\bpfsaw3, {
 };
 )
 
-
-
-
-
-
-
-
-
 //iteration
 (
 [58, 65, 68, 73].midicps.do{
@@ -196,3 +188,6 @@ SynthDef(\bpfsaw3, {
 )
 
 Synth(\bpfsaw);
+
+
+//multichannel expansion 
