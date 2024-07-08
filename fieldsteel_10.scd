@@ -1,7 +1,7 @@
 //Patterns, Part 1
 //https://www.youtube.com/watch?v=nB_bVJ1c1Rg&t=1008s
 
-
+s.boot;
 (
 SynthDef(\sine, {
 	|freq=440, atk=0.005, rel=0.3, amp=1, pan=0|
@@ -13,7 +13,6 @@ SynthDef(\sine, {
 	Out.ar(0, sig);
 }).add;
 )
-
 Synth(\sine);
 
 (
@@ -84,6 +83,9 @@ d.add(\kick -> PathName("/Volumes/Samsung 870 QVO/POLYEND/Samples/ARC Noise/kick
 )
 
 d.[\kick].choose.play;
+d.[\ohh].choose.play;
+d.[\chh].choose.play;
+
 
 (
 SynthDef(\bufplay, {
@@ -103,15 +105,15 @@ Pdef(
 	Pbind(
 		\instrument, \bufplay,
 		\dur, Pseq([1/16], inf),
-		\stretch, 1.875,
+		\stretch, 2,
 		\buf, Prand(d[\ohh]++d[\chh]++d[\kick], inf),
 		\rate, 1,
 		\amp, 0.5
 	);
-).stop;
+).play;
 )
 
-//Pxrand: no two twice
+//Pxrand: never choose values twice in a row
 (
 Pdef(
 	\rhythm,
@@ -123,8 +125,9 @@ Pdef(
 		\rate, 1,
 		\amp, 0.5
 	);
-).stop;
+).play;
 )
+
 //Pwrand: weighted by second array
 (
 Pdef(
@@ -151,7 +154,7 @@ Pdef(
 		\rate, 1,
 		\amp, 0.5
 	);
-).stop;
+).play;
 )
 
 
@@ -181,9 +184,9 @@ Pdef(
 		\stretch, 1.875,
 		\buf, Prand(d[\ohh]++d[\chh]++d[\kick], inf),
 		\rate, 1,
-		\amp, Pseq([0.8, Pexprand(0.005, 0.1, 7)], inf)
+		\amp, Pseq([0.8, Pexprand(0.005, 0.2, 7)], inf)
 	);
-).stop;
+).play;
 )
 
 //nested patterns
@@ -205,7 +208,7 @@ Pdef(
 		\rate, Pexprand(0.8, 1.25, inf),
 		\amp, Pseq([0.8, Pexprand(0.005, 0.25, 7)], inf)
 	);
-).stop;
+).play;
 )
 
 (
@@ -215,11 +218,11 @@ Pdef(
 		\instrument, \sine,
 		\dur, Pseq([1/16], inf),
 		\stretch, 1.875,
-		\note, Pxrand([0, 3, 5, 9, 12], inf),
+		\note, Pxrand([0, 3, 5, 9, 10, 12], inf),
 		\gtranspose, -7,
 		\atk, 0.005,
 		\rel, Pexprand(0.01, 0.5, inf),
-		\amp, Pexprand(0.05, 0.5, inf),
+		\amp, Pexprand(0.05, 0.75, inf),
 		\pan, Pwhite(-0.8, 0.8, inf);
 	);
 ).play.quant_(1.875);
@@ -238,7 +241,7 @@ Pdef(
 				Prand(d[\chh]++d[\ohh]++d[\kick], 7),
 			], inf
 		),
-		\rate, Pexprand(0.125, 420.0, inf),
+		\rate, Pexprand(0.125, 42.0, inf),
 		\amp, Pseq([0.8, Pexprand(0.005, 0.2, 7)], inf)
 	);
 ).play.quant_(1.875); //quantize per bar
