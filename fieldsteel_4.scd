@@ -126,7 +126,7 @@ x = {
 	sig = VarSaw.ar(SinOsc.kr(16).range(500, 1000)) * env;
 }.play;
 )
-
+s.boot;
 x.set(\gate, 1);
 x.set(\gate, 0);
 

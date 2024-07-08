@@ -54,3 +54,8 @@ https://www.youtube.com/watch?v=_GZmuvmgtUc&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iE
 
 MIDI, Part 1
 https://www.youtube.com/watch?v=Oz4KYZ9KLc0&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=10
+
+## Tutorial 10
+
+Patterns
+https://www.youtube.com/watch?v=nB_bVJ1c1Rg&list=PLPYzvS8A_rTaNDweXe6PX4CXSGq4iEWYC&index=11
