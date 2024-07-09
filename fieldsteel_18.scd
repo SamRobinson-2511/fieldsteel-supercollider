@@ -58,19 +58,19 @@ CmdPeriod.add({(0..127).do{arg n; m.noteOff(0,n)}});
 
 //midi.org
 
-EnvG
+
 
 //cc messages: kurzweil
 (
 m.noteOn(0, rrand(32, 35), 30);
 m.control(0, 12, rrand(100, 20)); //tuning
-m.control(0, 12, Env.new([0, 1, 1, 0], [0.5, 0.1, 1], doneAction:2)); //tuning
+
 m.control(0, 13, rrand(1, 2)); //cf shaper
 m.control(0, 14, rrand(2, 3)); //cf shaper 2
 m.control(0, 15, rrand(0, 1)); //cf shaper
 
 //amp env
-m.control(0, 73, exprand(127, 1)); //atk
+m.control(0, 73, exprand(1, 127)); //atk
 m.control(0, 72, exprand(1, 0.5)); //dec
 m.control(0, 72, exprand(1, 0.5)); //rel
 
@@ -79,7 +79,10 @@ m.control(0, 72, exprand(1, 0.5)); //rel
 
 
 //cc messages: reverb
-m.control(15, 12, rrand(0, 10));
+
+
+
+m.control(15, 12, rrand(10, 20));
 m.control(15, 13, rrand(1, 15));
 m.control(15, 14, rrand(1, 127));
 m.control(15, 15, rrand(1, 127));
