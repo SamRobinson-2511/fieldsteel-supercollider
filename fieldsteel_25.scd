@@ -1,11 +1,12 @@
+s.boot;
 (
 s.meter;
 s.plotTree;
 s.scope;
 )
 Buffer.freeAll;
-~b0 = Buffer.readChannel(s, "/Volumes/Samsung 870 QVO/Tascam/DR 05X recordings/wetWater.wav", channels: [0]);
-~b1 = Buffer.readChannel(s, "/Volumes/Samsung 870 QVO/Tascam/DR 05X recordings/waterNoise.wav", channels: [0]);
+b = Buffer.readChannel(s, "/Volumes/Samsung 870 QVO/Tascam/DR 05X recordings/wetWater.wav", channels: [0]);
+// b1 = Buffer.readChannel(s, "/Volumes/Samsung 870 QVO/Tascam/DR 05X recordings/waterNoise.wav", channels: [0]);
 
 ~b0.play;
 ~b1.play;
