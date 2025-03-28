@@ -47,6 +47,26 @@ t.beats;
 t.nextBar;
 t.stop;
 
+(
+~tempoChange = {
+	|clock, newTempo, numBeats|
+	var i = 0, tempoArray;
+	tempoArray = Array.interpolation(numBeats, clock.tempo, newTempo/60);
+	clock.schedAbs(clock.nextBar, {
+		clock.tempo_(tempoArray[i]);
+		i = i + 1;
+		if(i < numBeats) {1} {\done.postln};
+	})
+};
+)
+
+(
+~post = { t.beats.postln; 1;};
+t.schedAbs(t.nextBar, {~post.()});
+)
+
+
+
 
 t = TempoClock(112/60).permanent_(true).schedAbs(0, {t.beatsPerBar_(4)});
 
@@ -57,7 +77,7 @@ p = Pbind(
 	\dur, 0.5,
 	\degree, Pseq([5, 7, 8, 9], inf)
 );
-x = p.play(t);
+x = p.play(t, quant: 4);
 )
 x.stop;
 
@@ -67,8 +87,9 @@ q = Pbind(
 	\dur, 0.5, //1/16th note
 	\degree, Pseq([0, 1, 3s, 4], inf)
 );
-y = q.play(t);
+y = q.play(t, quant: [0.5, -0.50]);
 )
+y.stop;
 
 
 
