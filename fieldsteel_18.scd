@@ -7,7 +7,7 @@ s.boot;
 
 MIDIClient.init;
 MIDIClient.destinations;
-m = MIDIOut.new(3);
+m = MIDIOut(3);
 
 //test
 m.latency = 0;
@@ -22,7 +22,7 @@ m.noteOff(0, 69);
 	m.noteOn(0, nn, 25);
 };
 )
-
+m.allNotesOff(3);
 //arpeggiated inside routine
 (
 Routine({
@@ -56,7 +56,21 @@ r.stop;
 CmdPeriod.add({(0..127).do{arg n; m.noteOff(0,n)}});
 )
 
-//midi.org
+(
+r = Routine({
+	{
+		var note;
+		note =  rrand(28, 40);
+		m.noteOn(0, note, 127);
+		(30,40..100).reverse.do{
+			|val|
+			m.control(0, 20, val.postln);
+			0.2.wait;
+		};
+		m.noteOff(0, note);
+	}.loop;
+}).play;
+)
 
 
 
@@ -74,13 +88,7 @@ m.control(0, 73, exprand(1, 127)); //atk
 m.control(0, 72, exprand(1, 0.5)); //dec
 m.control(0, 72, exprand(1, 0.5)); //rel
 
-
-
-
-
 //cc messages: reverb
-
-
 
 m.control(15, 12, rrand(10, 20));
 m.control(15, 13, rrand(1, 15));
@@ -88,6 +96,43 @@ m.control(15, 14, rrand(1, 127));
 m.control(15, 15, rrand(1, 127));
 m.control(15, 16, rrand(1, 127));
 )
+
+
+
+(
+~k1 = Pbind(
+	\type, \midi,
+	\midicmd, \noteOn,
+	\midiout,
+)
+)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
