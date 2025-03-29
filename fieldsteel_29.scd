@@ -21,7 +21,6 @@ SynthDef(\tone, {
 	Out.ar(\out.kr(0), sig);
 }).add;
 )
-
 x = Synth(\tone);
 x.set(\gate, 0);
 
@@ -31,10 +30,8 @@ p = Pbind(
 	\dur, 0.5,
 	\degree, Pseq([5, 7, 8, 9], inf)
 );
-
 x = p.play;
 )
-
 x.stop;
 
 //(1) Tempo/Quantization
@@ -45,11 +42,57 @@ t.nextBar;
 t.stop;
 
 
-t = TempoClock.new(112/60).permanent_(true).schedAbs(0, { t.beatsPerBar_(3)});
-
-t.schedAbs(t.nextBar, { t.beatsPerBar_(4)});
-
+t = TempoClock(112/60).permanent_(true);
+t.beats;
 t.nextBar;
+t.stop;
+
+(
+~tempoChange = {
+	|clock, newTempo, numBeats|
+	var i = 0, tempoArray;
+	tempoArray = Array.interpolation(numBeats, clock.tempo, newTempo/60);
+	clock.schedAbs(clock.nextBar, {
+		clock.tempo_(tempoArray[i]);
+		i = i + 1;
+		if(i < numBeats) {1} {\done.postln};
+	})
+};
+)
+
+(
+~post = { t.beats.postln; 1;};
+t.schedAbs(t.nextBar, {~post.()});
+)
+
+
+
+
+t = TempoClock(112/60).permanent_(true).schedAbs(0, {t.beatsPerBar_(4)});
+
+
+(
+p = Pbind(
+	\instrument, \tone,
+	\dur, 0.5,
+	\degree, Pseq([5, 7, 8, 9], inf)
+);
+x = p.play(t, quant: 4);
+)
+x.stop;
+
+(
+q = Pbind(
+	\instrument, \tone,
+	\dur, 0.5, //1/16th note
+	\degree, Pseq([0, 1, 3s, 4], inf)
+);
+y = q.play(t, quant: [0.5, -0.50]);
+)
+y.stop;
+
+
+
 
 
 
