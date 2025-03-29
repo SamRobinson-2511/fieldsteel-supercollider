@@ -59,18 +59,21 @@ CmdPeriod.add({(0..127).do{arg n; m.noteOff(0,n)}});
 (
 r = Routine({
 	{
-		var note;
-		note =  rrand(28, 40);
-		m.noteOn(0, note, 127);
-		(30,40..100).reverse.do{
-			|val|
-			m.control(0, 20, val.postln);
-			0.2.wait;
+		[30, 40, 30, 45].do{
+			|note|
+			m.noteOn(0, note, 127);
+			(30,40..100).reverse.scramble.do{
+				|val|
+				m.control(0, 20, val.postln);
+				0.15.wait;
+			};
+			m.noteOff(0, note);
 		};
-		m.noteOff(0, note);
 	}.loop;
 }).play;
 )
+
+
 
 
 
